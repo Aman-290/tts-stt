@@ -1,0 +1,20 @@
+# Virtual Environment
+jarvis/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# Secrets/Tokens
+*.json
+credentials.json
+client_secret.json
+
+# Data
+data/
+
+# System
+.DS_Store
