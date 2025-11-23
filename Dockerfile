@@ -21,5 +21,5 @@ COPY . .
 # Expose port (adjust if needed)
 EXPOSE 8080
 
-# Run download-files at startup, then start the agent
-CMD python run_agent.py download-files && python run_agent.py
+# Run download-files at startup, then start the agent in production mode
+CMD python run_agent.py download-files && python run_agent.py start
