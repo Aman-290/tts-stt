@@ -16,7 +16,12 @@ RUN uv pip install --system -r requirements.txt
 # Copy the entire application
 COPY . .
 
+# Set environment variables to reduce memory usage
+ENV PYTHONUNBUFFERED=1
+ENV MALLOC_ARENA_MAX=2
 
+# Expose port for health checks
+EXPOSE 8080
 
 # Make startup script executable
 RUN chmod +x startup.sh
