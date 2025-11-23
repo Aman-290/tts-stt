@@ -16,11 +16,10 @@ RUN uv pip install --system -r requirements.txt
 # Copy the entire application
 COPY . .
 
-# Run the download-files command
-RUN python run_agent.py download-files
+
 
 # Expose port (adjust if needed)
 EXPOSE 8080
 
-# Run the agent
-CMD ["python", "run_agent.py"]
+# Run download-files at startup, then start the agent
+CMD python run_agent.py download-files && python run_agent.py
