@@ -18,8 +18,8 @@ COPY . .
 
 
 
-# Expose port (adjust if needed)
-EXPOSE 8080
+# Make startup script executable
+RUN chmod +x startup.sh
 
-# Run download-files at startup, then start the agent in production mode
-CMD python run_agent.py download-files && python run_agent.py start
+# Run the startup script
+CMD ["./startup.sh"]
